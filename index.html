@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой Плоттер Сервис</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+        #controls { margin-bottom: 20px; display: flex; gap: 10px; align-items: center; }
+        /* Визуализация формата листа */
+        #canvas-container { background: white; border: 1px solid #ccc; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+    <div id="controls">
+        <select id="paper-format">
+            <option value="A4">A4 (210x297 мм)</option>
+            <option value="A3">A3 (297x420 мм)</option>
+        </select>
+        
+        <input type="file" id="font-upload" accept=".ttf,.otf,.svg">
+        <input type="text" id="text-input" value="Привет, плоттер!" placeholder="Введите текст">
+        
+        <button id="btn-connect">🔌 Подключить плоттер</button>
+        <button id="btn-print" disabled>✍️ Начать печать</button>
+    </div>
+
+    <!-- Область предпросмотра листа -->
+    <div id="canvas-container">
+        <canvas id="plotter-canvas"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
